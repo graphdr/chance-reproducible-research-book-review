@@ -1,0 +1,239 @@
+---
+title: "Influences of reproducibility on work flow"
+author: "Richard Layton"
+date: '`r Sys.Date()`'
+output:
+  html_document:
+    fig_caption: yes
+    theme: flatly
+  pdf_document:
+    keep_tex: yes
+bibliography: ../common/RepResRef.bib
+---
+    
+    
+```{r echo=FALSE}
+# initialize knitr
+library(knitr) 
+opts_knit$set(root.dir = "../")
+opts_chunk$set(include=TRUE, echo=FALSE, eval=TRUE)
+```
+
+```{r}
+# setup knitr, pandoc, and table/figure auto-number functions
+source("common/RSetUpForRmdFiles.R")
+source("common/myFunctions.R")
+```
+
+
+
+
+# Reproducible reports
+
+<img src="https://dl.dropboxusercontent.com/u/36189294/wp/three_books_on_RR.png"  align=left>
+
+The aspect of reproducible research that has most influenced my own work is the  _reproducible report_, where a _report_ is a research product such as a journal article or a conference talk.  In a reproducible report, narrative and code are written in a single script (for smaller projects) or in a set of explicitly linked scripts (for larger projects). Changes made in narrative or code in one part of the work cascade through the other parts, generating a fully updated version of the report.   
+ 
+Three recent books have significantly influenced how I use R reproducibly: *Dynamic Documents with R and knitr* [@Xie2014], *Reproducible Research with R and RStudio* [@Gandrud2014], and *Implementing Reproducible Research* [@Stodden2014], all in the CRC Press R Series.
+
+# The books
+
+In general, Xie focuses on the dynamic document, Gandrud on the reproducible project, and Stodden, Leisch, and Peng (eds.) on all of the above (tools, practices, guidelines, and platforms) including larger issues such as intellectual property, open science practice, large-scale projects, and reproducible publishing. Taken together, the books provide a fairly broad introduction to the material and depth...
+
+
+
+
+ 
+I think many R users would credit Yihui Xie's *knitr* package as the breakthrough that made dynamic documents easy to create and maintain.  And integrating *knitr* into the [*RStudio*](http://www.rstudio.com/) IDE made management of reproducible computational projects even more accessible. Xie's book and [website](http://yihui.name/knitr/) are the go-to  references for *knitr* while Gandrud's book is an exceptional reference for organizing and implementing reproducible computational projects from data gathering and manipulation, to analysis and results, to rendering the report in various formats [@Gandrud2014]. 
+
+
+
+
+
+
+
+
+# For our students
+
+Bray et al. [-@Bray2014] discuss the importance of teaching our students the tools and benefits of working reproducibly. 
+
+
+On her [slides](https://github.com/jennybc/rr-organization1/tree/master/slides/organization-slides) from a talk at the Reproducible Science Workshop, Jenny Bryan gives some great advice on how to organize files.
+
+
+
+
+
+
+
+<!-- comment out
+### Credibility in computational science
+
+Scientific credibility, especially in computation, turns largely on the success or failure of attempts to reproduce findings. And because nearly every discipline "X" has a complementary discipline "computational X", computational reproducibility becomes an issue for all disciplines. 
+
+A number of recent cases illustrate how attempts to reproduce computational research can lead to findings being supported or refuted. 
+
+First, in economics, attempts to reproduce the findings of Kenneth Rogoff and Carmen Reinhart led to the discovery of coding errors, selective exclusion of available data, and unconventional weighting of summary statistics [@Herdon2013]. When the data and code were corrected, all support for their basic hypothesis vanished. Though Rogoff and Reinhart's findings did not cause the austerity policies promoted in Western democracies since 2008, the false findings were used to rationalize those policies [@Krugman2013].
+
+![](https://dl.dropboxusercontent.com/u/36189294/wp/reinhartandrogoff.png)<figcaption>*Kenneth Reinhart and Carmen Rogoff.*</figcaption><br>  
+
+Second, in cancer therapy developed at Duke University, attempts to reproduce the findings of Anil Potti led to the discovery that he had used unstable code and selectively excluded data. Third-year medical student Bradford Perez courageously alerted the university to his concerns about Potti's misconduct in 2008 but was rebuffed. Eventually, Potti left Duke, at least 12 journal articles have been retracted, the clinical trials based on that modeling were terminated, and patients in those trials have sued Duke University [@deBruyn2015].
+
+![](https://dl.dropboxusercontent.com/u/36189294/wp/anilpotti.png)<figcaption>*Anil Potti, formerly of Duke University.*</figcaption><br>  
+
+Lastly, in climate science, for years the University of East Anglia's Climatic Research Unit (CRU) resisted sharing the code and data underlying Penn State professor of meteorology Michael Mann's famous "hockey stick" graph showing 1000 years of global temperature variation. The CRU's reluctance to share the data and the code, says Victoria Stodden of the University of Illinois Champagne-Urbana, had undermined public confidence in scientific credibility even though subsequent comparative studies support the essential hockey stick finding [@Pearce2010].  Stodden continues,
+
+> My sense is that had this climate modeling community made its code and data readily available in a way that facilitated reproducibility of results, not only would they have avoided this embarrassment [of the leaked emails and the subsequent controversy] but the discourse would have been about scientific methods and results rather than potential evasions of FOIA [Freedom of Information Act] requests, whether or not data were fudged, or scientists acted improperly in squelching dissent or manipulating journal editorial boards [@Stodden2009]. 
+
+![](https://dl.dropboxusercontent.com/u/36189294/wp/hockeystick.png)<figcaption>*1000 years of temperature variation: the hockey stick graph by Michael Mann.*</figcaption><br>   
+
+Stodden, in *Implementing Reproducible Research* [@Stodden2014, Ch. 12], concludes that computational science today "faces a crisis of credibility. Without access to the code and data that underlie scientific discoveries, published findings are all but impossible to verify. Yet current intellectual property law stands directly and unavoidably in the way of open science." Stodden's essay on intellectual property in this book is a great introduction to the IP dilemma. 
+
+I cannot resolve the IP conflict here, nor does Stodden. What I can do however, is discuss how the ideas of reproducible research can have a powerful effect on your own research productivity, even if you never plan to share your data and code with anyone else. As Paul Wilson, of the University of Wisconsin Madison, puts it "Your closest collaborator is you six months ago, but you don't reply to emails." Everyone writing on this subject agrees, the first beneficiary of making your work reproducible is your future self. 
+-->
+
+<!-- comment out
+### What reproducible research can do for you
+
+The workflow that so many of us are familiar with starts like this: acquire some data and use a favorite analysis software, e.g. MATLAB, R, or Excel, to iteratively explore the data until we have a graph we think tells an important story. We save these preliminary findings as graphic files or data tables. We begin writing up the findings in our favorite reporting software, e.g., MSWord or LaTeX, manually  importing the graphs and tables. We find we have to revise some data, so we remake the graphs, manually import them to the report, and revise the report narrative. After several iterations, the report is ready for submission to a conference or journal or to our collaborators for review and comment.
+
+<figcaption>*A familiar workflow.*</figcaption>  
+<img src="https://dl.dropboxusercontent.com/u/36189294/wp/commonworkflow.png" width="500">
+
+Time passes. 
+
+We obtain comments from the reviewers leading to yet more revisions, editing, and manually embedding new figures and tables in the report. Eventually the report is submitted in final form.   
+
+More time passes. 
+
+Preparing for a conference at which we present these findings, we begin to prepare presentation slides using yet another software package. We remake the figures and tables for easy viewing and again manually embed them in the presentation file. After several iterations that include feedback and revisions from our collaborators, if any, and the presentation is final and presented. 
+
+More time passes.  
+
+Someone wants to reproduce some segment of the original work, a graduate student perhaps, a colleague, or even yourself. We look through the our poorly organized directories trying to use the date stamp to determine which set of data files, analysis files, and presentation were used to create a particular figure in the original paper or presentation. Even if successful, it usually takes more time that we can afford because we didn't plan or execute the work with reproducibility in mind from the start. 
+
+Important obstacles to efficiently reproducing one's own work are the pulldown menus and mouse clicks of GUI interfaces. First, as Karl Broman, UW-Madison, says, "If you do anything 'by hand' once, you'll do it 100 times." Second, manual operations leave no record. You can spend as much or even more time trying to reconstruct your work as you spent doing it in the first place. 
+
+The tools and practices of reproducible research can address this problem, improving your personal research productivity, even if you never intend to share your data and code with others. For taking your first steps in learning reproducible research, I  suggest two basic principles:
+
+1. Explicitly link computing, results, and narrative.  
+
+2. Organize for reproducibility from the beginning of a project. 
+-->
+
+<!-- comment out
+### Explicitly link computing, results, and narrative 
+
+The idea of blending narrative and computing in the same script originated with GNU make files and Donald Knuth's "literate programming" concept and was advanced by Jon Claerbot at Stanford. Brief histories of the reproducible research literature are given in [@Gandrud2014;  @Stodden2014; and @Xie2014]. 
+
+ I think many R users would credit Yihui Xie's *knitr* package as the breakthrough that made dynamic documents easy to create and maintain.  And integrating *knitr* into the [*RStudio*](http://www.rstudio.com/) IDE made management of reproducible computational projects even more accessible. Xie's book and [website](http://yihui.name/knitr/) are the go-to  references for *knitr* while Gandrud's book is an exceptional reference for organizing and implementing reproducible computational projects from data gathering and manipulation, to analysis and results, to rendering the report in various formats [@Gandrud2014].  
+
+The basic principle of the dynamic document is to link computing, results, and narrative in the same script or set of scripts. For example, you can open a script, write some narrative describing some data, in the same script write some R code that will create a graph when the script is rendered, and add some additional narrative to discuss the graph. 
+
+The script is rendered to create an output file in the format specified, e.g., PDF or HTML, the R code is executed, and the graph is embedded in the document with the accompanying narrative formatted per instructions in the script. Any changes to the data, graph, analysis, or narrative are  updated when the report is re-rendered. 
+
+![](https://dl.dropboxusercontent.com/u/36189294/wp/RR-overview.png)<br>  
+
+One of the great advantages of using RStudio for implementing reproducible research is the ease of rendering LaTeX markup (.Rnw files) to .tex and PDF format or RMarkdown markup (.Rmd files) to HTML or MSWord format. Rendering to MSWord is especially useful when your collaborators require files to be shared in .docx format. 
+-->
+
+<!-- comment out
+### Organize for reproducibility from the beginning of a project 
+
+Christopher Gandrud makes a very good case for organizing one's work for reproducibility from the beginning of a project and gives practical advice on how to implement a reproducible project [@Gandrud2014]. In this approach: 
+
+1. Every file is a script
+
+2. Every script is connected explicitly
+
+3. File management is planned
+
+*Project directory.* &ensp; Each project is given its own directory. For much of my work, a "project" is all work that produces a specific journal article, conference paper, or workshop. I use RStudios's *Project* feature for every project directory, thus the project-level directory is the working directory for that project. Gandrud suggests a Project directory with three main sub-directories: Data, Analysis, and Presentation. In my data visualization work, I have found it more convenient to have 6 main sub-directories: Common, Data, Design, Reports, Visuals, and WordPPT. 
+
+*Common directory.* &ensp; For document elements re-used from project to project, e.g., business logo, LaTeX preambles, bibliography files,  templates for rendering RMarkdown to MSWord, etc. 
+
+*Data directory.* &ensp; Excel data spreadsheets received from collaborators; R scripts that gather and manipulate data and write the  structured data frames to file in CSV format. The R scripts document the file names used and the data manipulation explicitly, enabling me or someone else to reproduce or verify the work.  I usually make these R scripts self-contained  so that I can run them independently of any other work in the project. 
+
+![](https://dl.dropboxusercontent.com/u/36189294/wp/data_directory.png)<br>  
+
+*Design directory.* &ensp; R scripts that read the prepared CSV data files, create graphs and tables, and write them to the *Visuals* directory in desired graphic formats. These R scripts are also self-contained so I can execute them independently while I'm designing and revising a graph. I prefer to call this directory "Design" because my primary work is in creating graphs; others may prefer "Analysis". "
+
+![](https://dl.dropboxusercontent.com/u/36189294/wp/design_directory.PNG)<br>  
+
+*Reports directory.* &ensp; Scripts in .Rnw or .Rmd markup to produce the final report document. If I'm the sole author for a project, I use .Rnw markup because LaTeX supports advanced design of documents. I use .Rmd markup when I have collaborators who use MSWord exclusively. In either case, the report script executes each independent data script and design script by name and includes the resulting tables and graphs in the report with accompanying narratives. This is the master script that invokes all the other scripts required to render a particular report in the desired format, e.g., PDF, HTML, or MSWord. 
+
+![](https://dl.dropboxusercontent.com/u/36189294/wp/report_directory.PNG)<br>  
+
+Placing my main script for the report in a *Reports* directory is contrary to Yihui Xie's advice in [@Xie2014]; he prefers the main report script to be in the working directory. I prefer the arrangement shown here. However, I agree with Xie's advice to use relative directory paths to support portability and reproducibility. 
+
+*WordPPT directory.* &ensp; I regularly work with colleagues do not work reproducibly---who regularly do analysis in Excel, reporting in Word, and presenting in PowerPoint.  Materials they send me are saved in this directory. If any of their work affects my reproducible work, I make the necessary updates and revisions to my scripts, re-run the main report, and send it to my collaborators. 
+
+![](https://dl.dropboxusercontent.com/u/36189294/wp/group_interaction.png)<br>  
+
+If I am in charge of the final report, it will be fully reproducible. If another member of the team is in charge of the final report and they are not using reproducible practices, they will copy and paste elements from my work to import it to the final report. Thus some non-reproducible steps are introduced into the work flow. 
+
+Hoefling and Rossinni, in [@Stodden2014, Ch. 8], have some perceptive insights into the problems of collaborating on large-scale reproducible projects. Some of the future improvements they wanted have been addressed since the book was published, e.g., if one uses RMarkdown to render a report to MSWord, we now have support for tables and MSWord style assignments for headers, footers, section headings, etc. Tables are now supported using the *kable()* function in *knitr* or using RMarkdown to MSWord.  
+-->
+
+<!-- comment out
+### Next steps
+
+I've covered what I consider the first steps in making one's research reproducible. However, full reproducibility entails much more than dynamic documents and well-designed directories. 
+
+Each of the three books that have been my primary references to date go into more detail. In general, Xie focuses on the dynamic document, Gandrud on the reproducible project, and Stodden, Leisch, and Peng on all of the above (tools, practices, guidelines, and platforms) including  larger issues such as intellectual property, the practice of open science, large-scale projects, and reproducible publishing.
+
+Numerous resources on reproducible research are available online. For example, [@Sandve2013] describes  "10 simple rules" for reproducibility covering issues I've omitted here. The  [R-bloggers](http://www.r-bloggers.com/) site is a searchable compendium of R news and tutorials; the [slideshare](http://www.slideshare.net/?ss) site yields numerous hits on reproducible research presentations. 
+-->
+
+<!-- comment out
+### Summary
+
+Applying two basic principles for reproducible research---explicitly linking computing, results, and narrative, and organizing for reproducibility from the beginning of a project---has improved the  productivity of my computational work and my contributions to collaborative research. 
+
+In retrospect, it seems astonishing that work flows like I've described here have been not taught to students of science, engineering, and mathematics until only just recently. As Millman and Perez put it, 
+
+> Yet, for all its importance, computing receives perfunctory attention in the training of new scientists and in the conduct of everyday research. It is treated as an inconsequential task that students and researchers learn "on the go" with little consideration for ensuring computational results are trustworthy, comprehensible, and ultimately a secure foundation for reproducible outcomes. Software and data are stored with poor organization, little documentation, and few tests. A haphazard patchwork of software tools is used with limited attention paid to capturing the complex workflows that emerge. The evolution of code is not tracked over time, making it difficult to understand what iteration of the code was used to obtain any specific result. Finally, many of the software packages used by scientists in research are proprietary and closed source, preventing complete understanding and control of the final scientific result [@Stodden2014, Ch. 6]. 
+
+Anyone working to make their research reproducible will find abundant  advice, practical suggestions, how-to examples, and ideas and issues to ponder in all of the three main references [@Gandrud2014;  @Stodden2014; and @Xie2014]. I have read and re-read them a number of times and I look forward to the Gandrud's [second edition](https://www.crcpress.com/product/isbn/9781498715379) scheduled for release later this year. 
+
+
+
+
+
+<!-- figures -->
+
+
+<!-- comment out
+### Image credits
+
+<font style="font-size:14px; line-height:16px;"> 
+
+Image of Reinhart and Rogoff, courtesy of The Commentator, reprinted under Creative Commons license.  http://www.thecommentator.com/privacy_policy. 
+
+Image of Anil Potti, from WPDE.com. (c) 2015 Sinclair Communications, LLC. http://www.carolinalive.com/ 
+
+"Hockey stick" graph from Mann, Bradley, & Hughes, Nature, 1998. Reprinted from The Guardian, (c) 2015 Guardian News and Media Limited.  http://www.theguardian.com/environment/2010/feb/02/hockey-stick-graph-climatechange.
+
+Bing logo images for MATLAB, Microsoft Word, Excel, & PowerPoint, and for Adobe PDF are reprinted under Creative Commons license.
+
+Other clip art courtesy of https://openclipart.org/, used with permission.
+
+</font>
+-->
+
+
+### References
+
+
+
+<!-- comment out
+```{r}
+# # cleanup directories, selected files are unlinked
+# source("Common/CleanupDirectories.R")
+# # cat("RSession information")
+# # devtools::session_info()
+```
+-->
+
+
+<!--last line-->
