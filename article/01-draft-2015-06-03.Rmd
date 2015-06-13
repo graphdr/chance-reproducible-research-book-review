@@ -42,13 +42,15 @@ Three recent books have significantly influenced how I use R reproducibly: *Dyna
 
 In general, Xie focuses on the dynamic document, Gandrud on the reproducible project, and Stodden, Leisch, and Peng (eds.) on all of the above (tools, practices, guidelines, and platforms) including larger issues such as intellectual property, open science practice, large-scale projects, and reproducible publishing. Taken together, the books provide sufficient breadth to address most beginners' needs and sufficient depth to offer new insights to more experienced practitioners. 
 
-t
+Each book devotes some space to acknowledging the roughly 25-year history of reproducible research and the debt the community owes to leaders and innovators like Don Knuth, Jon Claerbot, and others. Still, I credit two recently developed software environments---Yihui Xie's *knitr* package and the [*RStudio*](http://www.rstudio.com/) IDE---with making dynamic documents easy to create and maintain.
 
 
 
 
- 
-I think many R users would credit Yihui Xie's *knitr* package as the breakthrough that made dynamic documents easy to create and maintain.  And integrating *knitr* into the [*RStudio*](http://www.rstudio.com/) IDE made management of reproducible computational projects even more accessible. Xie's book and [website](http://yihui.name/knitr/) are the go-to  references for *knitr* while Gandrud's book is an exceptional reference for organizing and implementing reproducible computational projects from data gathering and manipulation, to analysis and results, to rendering the report in various formats. 
+
+
+
+Xie's book and [website](http://yihui.name/knitr/) are the go-to  references for *knitr* while Gandrud's book is an exceptional reference for organizing and implementing reproducible computational projects from data gathering and manipulation, to analysis and results, to rendering the report in various formats. 
 
 
 
