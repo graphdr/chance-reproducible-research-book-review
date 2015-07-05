@@ -102,21 +102,9 @@ In my opinion, everyone using R for reproducible research will want to read Xie 
 
 Nevertheless, because the book provides a broad view of the entire reproducible research landscape (circa 2014), every practitioner should find practical suggestions to apply in their own work as well as thought-provoking propositions on the future of the field. 
 
-The book is divided into three major parts: [list the three parts here]. 
-In part 1, ...
-In part 2, ...
-In part 3, ...
+The book is divided into three major parts. Part 1 "Tools" covers   computational tools such as knitr, VisTrails, Sumatra, CDE, and the Declaratron system. Part 2 "Practices and guidelines" covers open source practice, good programming practice, trends in open science, and the role of cloud computing. Part 3 "Platforms" covers software and platforms, including open source software packages, the RunMyCode platform, and open access journals. 
 
-
-discussions of software itself become dated quickly
-but the issues will be with us longer
-
-parts that spoke to me
-the chapter on the large-scale project and how to manage
-that some of the problems (dealing with Word) have been solved since publication
-in Xie's chapter I learned more useful stuff about knitr
-in Stodden's chapter I learned about IP
-
+While any published discussion of software becomes dated fairly quickly, many of the problems described by the authors persist, making their problem descriptions and solution methods of longer-lasting interest to readers. Parts of the book that spoke to me personally and influenced my work were chapters on *knitr* (Ch. 1), managing reproducibility for large-scale projects (Ch. 8), and intellectual property (Ch. 12).  
 
 
 ## Influences
